@@ -1,0 +1,12 @@
+version: "3.7"
+services:
+  rev:
+    image: nginx:1.15.8
+    ports:
+      - "80:80"
+    container_name: nginx
+    logging:
+      driver: "fluentd"
+      options:
+        fluentd-address: "10.20.20.20:24224"
+        tag: "smac-log"
