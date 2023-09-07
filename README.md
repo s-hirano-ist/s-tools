@@ -1,4 +1,4 @@
-# Reverse Proxy
+# Template of NginX
 
 Reverse proxy server for web contents.
 
