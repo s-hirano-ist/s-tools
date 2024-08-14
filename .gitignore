@@ -1,5 +1,2 @@
-# secret keys
-conf.d/ssl
-
 # for Mac
 .DS_store
