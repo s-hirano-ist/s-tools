@@ -1,38 +1,38 @@
-version: '3.9'
-
 services:
 
-  portainer:
-    container_name: portainer
-    image: portainer/portainer-ce:2.19.4-alpine
-    logging:
-      driver: json-file
-      options:
-        max-size: 10m
-        max-file: '10'
-    restart: 'always'
-    ports:
-      - "9443:9443"
-    volumes:
-      - portainer_data:/data
-      - /var/run/docker.sock:/var/run/docker.sock
-    networks:
-      - monitoring
+  # portainer:
+  #   container_name: portainer
+  #   image: portainer/portainer-ce:2.19.4-alpine
+  #   logging:
+  #     driver: json-file
+  #     options:
+  #       max-size: 10m
+  #       max-file: '10'
+  #   restart: always
+  #   ports:
+  #     - "9443:9443"
+  #   volumes:
+  #     - portainer_data:/data
+  #     - /var/run/docker.sock:/var/run/docker.sock
+  #   networks:
+  #     - s-network
 
   rproxy:
-    image: nginx:1.27.0
     container_name: rproxy
-    volumes:
-      - ./nginx/conf.d:/etc/nginx/conf.d
+    image: nginx:1.27.0
+    restart: always
     ports:
       - "80:80"
       - "443:443"
-    restart: always
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
     # dns:
     #   - XX.XX.XX.XX
+    networks:
+      - s-network
 
 volumes:
   portainer_data:
 
 networks:
-  monitoring:
+  s-network:
