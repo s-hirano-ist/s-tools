@@ -19,6 +19,18 @@ services:
     networks:
       - monitoring
 
+  rproxy:
+    image: nginx:1.27.0
+    container_name: rproxy
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+    ports:
+      - "80:80"
+      - "443:443"
+    restart: always
+    # dns:
+    #   - XX.XX.XX.XX
+
 volumes:
   portainer_data:
 

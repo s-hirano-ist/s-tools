@@ -1,4 +1,5 @@
-.DS_store
+# secret keys
+conf.d/ssl
 
-# ADD THE FOLLOWING LINE FOR PRODUCTION USE
-# conf.d/ssl
+# for Mac
+.DS_store
