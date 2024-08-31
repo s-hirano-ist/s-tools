@@ -1,8 +1,8 @@
 # s-tools
 
-## Portainer
+## portainer
 
-## NginX
+## nginx
 
 Reverse proxy server for web contents.
 
@@ -20,3 +20,9 @@ change settings
 vim conf.d/default.conf
 docker restart rproxy
 ```
+
+## grafana
+
+## node exporter
+
+## fluentd
