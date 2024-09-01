@@ -1,0 +1,21 @@
+services:
+
+  nginx:
+    container_name: nginx
+    restart: always
+    ports:
+      - "443:443"
+      - "9443:9443"
+      - "6006:6006"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - /etc/letsencrypt:/etc/letsencrypt
+      - /var/www/certbot:/var/www/certbot
+    networks:
+      - s-network
+
+networks:
+  s-network:
+    external: true
