@@ -1,0 +1,21 @@
+services:
+
+  prometheus:
+    image: prom/prometheus:v2.49.1
+    container_name: prometheus
+    hostname: prometheus
+    volumes:
+      - ./prometheus:/etc/prometheus
+      - metrics_data:/prometheus
+    command:
+      - "--config.file=/etc/prometheus/prometheus.yaml"
+    restart: always
+    networks:
+      - s-network
+
+volumes:
+  metrics_data:
+
+networks:
+  s-network:
+    external: true

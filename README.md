@@ -1,28 +1,9 @@
 # s-tools
 
-## portainer
+## 利用ツール
 
-## nginx
-
-Reverse proxy server for web contents.
-
-### Usage
-
-start
-
-```bash
-docker-compose up --build -d
-```
-
-change settings
-
-```bash
-vim conf.d/default.conf
-docker restart rproxy
-```
-
-## grafana
-
-## node exporter
-
-## fluentd
+1. Grafana
+2. nginx
+3. Node exporter
+4. Portainer
+5. Prometheus

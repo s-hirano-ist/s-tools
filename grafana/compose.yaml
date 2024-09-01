@@ -1,0 +1,17 @@
+services:
+
+  grafana:
+    image: grafana/grafana-enterprise:10.0.10
+    container_name: grafana
+    restart: always
+    networks:
+      - s-network
+    volumes:
+      - 'grafana_data:/var/lib/grafana'
+
+volumes:
+  grafana_data:
+
+networks:
+  s-network:
+    external: true
