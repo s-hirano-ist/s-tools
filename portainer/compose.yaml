@@ -15,22 +15,6 @@ services:
     networks:
       - s-network
 
-  nginx:
-    container_name: nginx
-    restart: always
-    ports:
-      - "443:443"
-      - "9443:9443"
-      - "6006:6006"
-    build:
-      context: ./nginx
-      dockerfile: Dockerfile
-    volumes:
-      - /etc/letsencrypt:/etc/letsencrypt
-      - /var/www/certbot:/var/www/certbot
-    networks:
-      - s-network
-
 volumes:
   portainer_data:
 
