@@ -1,17 +1,36 @@
 {
-  timezone: "Asia/Tokyo",
-  baseBranches: ["main"],
-  extends: ["config:base", ":semanticCommitTypeAll(chore)"],
-  reviewers: ["s-hirano-ist"],
-  enabledManagers: ["github-actions", "docker-compose", "dockerfile"],
+  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
+  timezone: 'Asia/Tokyo',
+  baseBranches: [
+    'main',
+  ],
+  extends: [
+    'config:recommended',
+    'config:best-practices',
+    ':semanticCommitTypeAll(chore)',
+  ],
+  reviewers: [
+    's-hirano-ist',
+  ],
+  enabledManagers: [
+    'github-actions',
+    'docker-compose',
+    'dockerfile',
+  ],
   dependencyDashboard: true,
-  schedule: ["before 11am on monday"],
-  labels: ["dependencies"],
-  rangeStrategy: "bump",
+  schedule: [
+    'before 11am on monday',
+  ],
+  labels: [
+    'dependencies',
+  ],
+  rangeStrategy: 'bump',
   lockFileMaintenance: {
     enabled: true,
   },
   vulnerabilityAlerts: {
-    labels: ["security"],
+    labels: [
+      'security',
+    ],
   },
 }
