@@ -2,7 +2,7 @@ services:
 
   portainer:
     container_name: portainer
-    image: portainer/portainer-ce:2.21.0-alpine
+    image: portainer/portainer-ce:2.21.0-alpine@sha256:a3dd960478f95352fa2e3a52d64787bd0fa656a66fff4eb87bbdf89e27fae7d2
     logging:
       driver: json-file
       options:
