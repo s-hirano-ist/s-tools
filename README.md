@@ -7,3 +7,4 @@
 3. Node exporter
 4. Portainer
 5. Prometheus
+6. s-private

@@ -1,0 +1,42 @@
+services:
+  s_db:
+    container_name: s-db
+    image: s0hirano/s-db:${TAG_DB}
+    volumes:
+      - s-db-data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432 # FIXME: disable after #274
+    profiles:
+      - prod
+    restart: always
+    networks:
+      - s-network
+    env_file:
+      - .env.db
+
+  s_private:
+    container_name: s-private
+    image: s0hirano/s-private:${TAG_S_PRIVATE}
+    profiles:
+      - prod
+    restart: always
+    networks:
+      - s-network
+    env_file:
+      - .env.server
+
+  s_storybook:
+    container_name: s-storybook
+    image: s0hirano/s-storybook:${TAG_STORYBOOK}
+    profiles:
+      - storybook
+    restart: always
+    networks:
+      - s-network
+
+volumes:
+  s-db-data:
+
+networks:
+  s-network:
+    external: true
