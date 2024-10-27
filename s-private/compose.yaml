@@ -1,7 +1,7 @@
 services:
   prod_db:
     container_name: prod-db
-    image: s0hirano/s-db:${TAG}
+    image: s0hirano/s-db:${TAG_DB}
     volumes:
       - prod-db-data:/var/lib/postgresql/data
     ports:
@@ -16,7 +16,7 @@ services:
 
   s_private:
     container_name: s-private
-    image: s0hirano/s-private:${TAG}
+    image: s0hirano/s-private:${TAG_S_PRIVATE}
     profiles:
       - prod
     restart: always
@@ -27,14 +27,12 @@ services:
 
   s_storybook:
     container_name: s-storybook
-    image: s0hirano/s-storybook:${TAG}
+    image: s0hirano/s-storybook:${TAG_STORYBOOK}
     profiles:
       - storybook
     restart: always
     networks:
       - s-network
-    env_file:
-      - .env.storybook
 
 volumes:
   prod-db-data:
