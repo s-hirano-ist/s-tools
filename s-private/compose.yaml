@@ -1,6 +1,6 @@
 services:
   s_db:
-    container_name: s-sb
+    container_name: s-db
     image: s0hirano/s-db:${TAG_DB}
     volumes:
       - s-db-data:/var/lib/postgresql/data
