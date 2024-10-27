@@ -1,9 +1,9 @@
 services:
-  prod_db:
-    container_name: prod-db
+  s_db:
+    container_name: s-sb
     image: s0hirano/s-db:${TAG_DB}
     volumes:
-      - prod-db-data:/var/lib/postgresql/data
+      - s-db-data:/var/lib/postgresql/data
     ports:
       - 5432:5432 # FIXME: disable after #274
     profiles:
@@ -35,7 +35,7 @@ services:
       - s-network
 
 volumes:
-  prod-db-data:
+  s-db-data:
 
 networks:
   s-network:
