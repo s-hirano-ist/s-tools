@@ -1,2 +1,7 @@
 # for Mac
 .DS_store
+
+# .env
+.env.db
+.env.server
+.env.storybook
