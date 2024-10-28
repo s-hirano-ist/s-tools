@@ -5,3 +5,4 @@
 .env.db
 .env.server
 .env.storybook
+.env
