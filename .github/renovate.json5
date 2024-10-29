@@ -33,4 +33,13 @@
       'security',
     ],
   },
+    packageRules: [
+    {
+      "matchManagers": [
+        "github-actions",
+      ],
+      "groupName": "GitHub Actions Updates",
+      "groupSlug": "github-actions-updates"
+    }
+  ],
 }
