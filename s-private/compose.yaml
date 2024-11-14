@@ -14,6 +14,22 @@ services:
     env_file:
       - .env.db
 
+  s_storage:
+    container_name: dev-storage
+    image: s0hirano/s-storage:${TAG_STORAGE}
+    volumes:
+      - s-storage-data:/data
+    ports:
+      - "9000:9000"  # FIXME: disable after #274
+      - "9001:9001"  # FIXME: disable after #274
+    profiles:
+      - prod
+    restart: always
+    networks:
+      - s-network
+    env_file:
+      - .env.storage
+
   s_private:
     container_name: s-private
     image: s0hirano/s-private:${TAG_S_PRIVATE}
