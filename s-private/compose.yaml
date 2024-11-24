@@ -5,7 +5,7 @@ services:
     volumes:
       - s-db-data:/var/lib/postgresql/data
     ports:
-      - 5432:5432 # FIXME: disable after #274
+      - 5432:5432 # FIXME: disable after #49
     profiles:
       - prod
     restart: always
@@ -15,13 +15,14 @@ services:
       - .env.db
 
   s_storage:
-    container_name: dev-storage
+    container_name: s-storage
     image: s0hirano/s-storage:${TAG_STORAGE}
     volumes:
       - s-storage-data:/data
+      - ./minio/certs:/root/.minio/certs
     ports:
-      - "9000:9000"  # FIXME: disable after #274
-      - "9001:9001"  # FIXME: disable after #274
+      - "9000:9000"  # FIXME: disable after #49
+      - "9001:9001"  # FIXME: disable after #49
     profiles:
       - prod
     restart: always
