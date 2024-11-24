@@ -7,3 +7,6 @@
 .env.server
 .env.storybook
 .env
+
+# MinIO certs
+s-private/minio/certs/
