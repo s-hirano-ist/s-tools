@@ -16,3 +16,13 @@ change settings
 vim conf.d/default.conf
 docker restart rproxy
 ```
+
+auto renual ssl
+
+```bash
+crontab -e
+```
+
+```txt
+0 0 1 * * /root/s-tools/nginx/certbot_renew.sh
+```
