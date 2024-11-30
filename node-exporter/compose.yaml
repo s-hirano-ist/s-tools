@@ -1,6 +1,6 @@
 services:
   node_exporter:
-    image: quay.io/prometheus/node-exporter:v1.7.0@sha256:4cb2b9019f1757be8482419002cb7afe028fdba35d47958829e4cfeaf6246d80
+    image: quay.io/prometheus/node-exporter:v1.8.2@sha256:4032c6d5bfd752342c3e631c2f1de93ba6b86c41db6b167b9a35372c139e7706
     container_name: node_exporter
     restart: always
     volumes:
