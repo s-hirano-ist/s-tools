@@ -10,7 +10,7 @@ services:
       - "9443:9443"
       - "6006:6006"
       # - "9000:9000"
-      # - "9001:9001"
+      - "9001:9001"
     build:
       context: .
       dockerfile: Dockerfile
