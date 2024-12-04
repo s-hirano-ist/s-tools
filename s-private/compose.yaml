@@ -5,7 +5,7 @@ services:
     volumes:
       - s-db-data:/var/lib/postgresql/data
     ports:
-      - 5432:5432 # FIXME: disable after #49
+      - 5432:5432 # need to allow due to access from github actions
     profiles:
       - prod
     restart: always
@@ -21,7 +21,7 @@ services:
       - s-storage-data:/data
       - ./minio/certs:/root/.minio/certs
     ports:
-      - "9000:9000"  # FIXME: disable after #49
+      - "9000:9000"  # FIXME: disable and move to nginx #65
     profiles:
       - prod
     restart: always
@@ -49,6 +49,15 @@ services:
     restart: always
     networks:
       - s-network
+
+  migrate:
+    container_name: migrate
+    build:
+      context: .
+    networks:
+      - s-network
+    env_file:
+      - .env.server
 
 volumes:
   s-db-data:
