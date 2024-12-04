@@ -22,7 +22,6 @@ services:
       - ./minio/certs:/root/.minio/certs
     ports:
       - "9000:9000"  # FIXME: disable after #49
-      - "9001:9001"  # FIXME: disable after #49
     profiles:
       - prod
     restart: always
