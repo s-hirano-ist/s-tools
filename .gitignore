@@ -4,8 +4,7 @@
 # .env
 .env.db
 .env.storage
-.env.server
-.env.storybook
+.env.migrate
 .env
 
 # MinIO certs
