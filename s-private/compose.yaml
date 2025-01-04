@@ -1,7 +1,7 @@
 services:
   s_db:
-    container_name: s-db
-    image: s0hirano/s-db:${TAG_DB}
+    container_name: s-database
+    image: s0hirano/s-database:${TAG_DB}
     volumes:
       - s-db-data:/var/lib/postgresql/data
     ports:
@@ -38,8 +38,6 @@ services:
     restart: always
     networks:
       - s-network
-    env_file:
-      - .env.server
 
   s_storybook:
     container_name: s-storybook
@@ -54,10 +52,12 @@ services:
     container_name: migrate
     build:
       context: .
+    profiles:
+      - migrate
     networks:
       - s-network
     env_file:
-      - .env.server
+      - .env.migrate
 
 volumes:
   s-db-data:
