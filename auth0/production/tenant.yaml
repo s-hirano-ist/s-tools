@@ -50,7 +50,7 @@ clients:
       alg: RS256
       lifetime_in_seconds: 36000
       secret_encoded: false
-    logo_uri: ''
+    logo_uri: https://private.s-hirano.com/logo.png
     native_social_login:
       apple:
         enabled: false
@@ -114,17 +114,7 @@ databases:
       enabledDatabaseCustomization: false
     realms:
       - Username-Password-Authentication
-connections:
-  - name: google-oauth2
-    strategy: google-oauth2
-    enabled_clients: []
-    is_domain_connection: false
-    options:
-      email: true
-      scope:
-        - email
-        - profile
-      profile: true
+connections: []
 tenant:
   enabled_locales:
     - en
@@ -138,6 +128,10 @@ tenant:
   sandbox_version: '18'
   support_email: s-hirano-ist@outlook.com
   support_url: https://private.s-hirano.com
+  universal_login:
+    colors:
+      page_background: '#A7D8E3'
+      primary: '#A7D8E3'
 emailProvider: {}
 emailTemplates: []
 clientGrants: []
@@ -174,12 +168,30 @@ roles:
     description: Viewer admin permission
     permissions: []
 branding:
+  colors:
+    page_background: '#A7D8E3'
+    primary: '#A7D8E3'
   logo_url: https://private.s-hirano.com/logo.png
   templates: []
 prompts:
-  customText: {}
+  customText:
+    en:
+      login:
+        login:
+          title: s-private
+          description: Contents dumper and viewer for s-hirano-ist
+      login-id:
+        login-id:
+          title: s-private
+          description: Contents dumper and viewer for s-hirano-ist
+      login-password:
+        login-password:
+          description: Enter Your Password
+          title: s-private
+  identifier_first: true
   partials: {}
   universal_login_experience: new
+  webauthn_platform_first_factor: false
 actions:
   - name: fetch-role
     code: ./actions/fetch-role/code.js
@@ -228,7 +240,70 @@ attackProtection:
         rate: 1200
 logStreams: []
 customDomains: []
-themes: []
+themes:
+  - borders:
+      button_border_weight: 1
+      buttons_style: rounded
+      button_border_radius: 3
+      input_border_weight: 1
+      inputs_style: rounded
+      input_border_radius: 3
+      widget_corner_radius: 5
+      widget_border_weight: 0
+      show_widget_shadow: true
+    colors:
+      primary_button: '#A7D8E3'
+      primary_button_label: '#ffffff'
+      secondary_button_border: '#c9cace'
+      secondary_button_label: '#1e212a'
+      base_focus_color: '#A7D8E3'
+      base_hover_color: '#000000'
+      links_focused_components: '#A7D8E3'
+      header: '#1e212a'
+      body_text: '#1e212a'
+      widget_background: '#ffffff'
+      widget_border: '#c9cace'
+      input_labels_placeholders: '#65676e'
+      input_filled_text: '#000000'
+      input_border: '#c9cace'
+      input_background: '#ffffff'
+      icons: '#A7D8E3'
+      error: '#d03c38'
+      success: '#A7D8E3'
+      captcha_widget_theme: light
+    displayName: Unnamed Theme
+    fonts:
+      font_url: ''
+      reference_text_size: 16
+      title:
+        bold: false
+        size: 150
+      subtitle:
+        bold: false
+        size: 87.5
+      body_text:
+        bold: false
+        size: 87.5
+      buttons_text:
+        bold: false
+        size: 100
+      input_labels:
+        bold: false
+        size: 100
+      links:
+        bold: true
+        size: 87.5
+      links_style: normal
+    page_background:
+      page_layout: center
+      background_color: '#A7D8E3'
+      background_image_url: ''
+    widget:
+      logo_position: center
+      logo_url: https://private.s-hirano.com/logo.png
+      logo_height: 52
+      header_text_alignment: center
+      social_buttons_layout: bottom
 forms: []
 flows: []
 flowVaultConnections: []
