@@ -1,7 +1,7 @@
 services:
   s_db:
     container_name: s-database
-    image: s0hirano/s-database:${TAG_DB}
+    image: s0hirano/s-database:${TAG_DATABASE}
     volumes:
       - s-db-data:/var/lib/postgresql/data
     ports:
@@ -21,7 +21,7 @@ services:
       - s-storage-data:/data
       - ./minio/certs:/root/.minio/certs
     ports:
-      - "9000:9000"  # FIXME: disable and move to nginx #65
+      - "9000:9000" # FIXME: disable and move to nginx #65
     profiles:
       - prod
     restart: always
