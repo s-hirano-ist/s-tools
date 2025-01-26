@@ -184,6 +184,10 @@ prompts:
         login-id:
           title: s-private
           description: Contents dumper and viewer for s-hirano-ist
+      login-password:
+        login-password:
+          description: Enter Your Password
+          title: s-private
   identifier_first: true
   partials: {}
   universal_login_experience: new
