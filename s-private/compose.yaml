@@ -43,7 +43,7 @@ services:
     container_name: s-storybook
     image: s0hirano/s-storybook:${TAG_STORYBOOK}
     profiles:
-      - storybook
+      - prod
     restart: always
     networks:
       - s-network
