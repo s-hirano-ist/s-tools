@@ -18,7 +18,7 @@ fi
 TAG=$1
 
 echo "Start building image..."
-docker build --platform linux/amd64 -t s0hirano/s-storage:$TAG -f docker/storage.Dockerfile . || {
+docker build --platform linux/amd64 -t s0hirano/s-storage:$TAG -f storage.Dockerfile . || {
   echo "error: Failed to build image."
   exit 1
 }

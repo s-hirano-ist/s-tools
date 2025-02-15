@@ -8,3 +8,6 @@
 4. Portainer
 5. Prometheus
 6. [s-private](https://github.com/s-hirano-ist/s-private)
+    1. Next.js
+    2. PostgreSQL
+    3. MinIO
