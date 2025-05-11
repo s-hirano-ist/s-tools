@@ -1,7 +1,7 @@
 services:
 
   grafana:
-    image: grafana/grafana-enterprise:11.5.2@sha256:ebb550e7ed2227a74567daf275f24f33f21234206430bdb40bee90374ae7d2b4
+    image: grafana/grafana-enterprise:12.0.0@sha256:d0feefe7922323e713772f19de73cf75188417c97b648e7e81e0232cac58db01
     container_name: grafana
     restart: always
     networks:
