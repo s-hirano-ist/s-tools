@@ -1,6 +1,8 @@
 # s-tools
 
-## 現行（2025年2月現在）の構成
+Config file templates which are not used right now by any projects.
+
+## 旧構成
 
 1. Cloudflare
     - DNS: Nameserver
